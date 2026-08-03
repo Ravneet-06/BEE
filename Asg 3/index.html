@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Form</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:700px;
+            margin:30px auto;
+            background:white;
+            padding:25px;
+            border-radius:8px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        label{
+            display:block;
+            margin-top:15px;
+            font-weight:bold;
+        }
+
+        input,select,textarea{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            box-sizing:border-box;
+        }
+
+        textarea{
+            resize:none;
+        }
+
+        .error{
+            color:red;
+            font-size:15px;
+        }
+
+        .buttons{
+            margin-top:20px;
+        }
+
+        button{
+            padding:10px 18px;
+            margin-right:10px;
+            cursor:pointer;
+        }
+
+        #display{
+            border:1px solid gray;
+            padding:15px;
+            margin-top:10px;
+            background:#fafafa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    <h1>Student Feedback Form</h1>
+
+    <form id="feedbackForm">
+
+        <label>Student Name</label>
+        <input type="text" id="name">
+        <small id="nameError" class="error"></small>
+
+        <label>Email</label>
+        <input type="email" id="email">
+        <small id="emailError" class="error"></small>
+
+        <label>Course</label>
+        <select id="course">
+            <option value="">Select Course</option>
+            <option>Java</option>
+            <option>Python</option>
+            <option>JavaScript</option>
+            <option>React</option>
+            <option>C++</option>
+        </select>
+        <small id="courseError" class="error"></small>
+
+        <label>Feedback</label>
+        <textarea id="feedback" rows="5"></textarea>
+        <small id="feedbackError" class="error"></small>
+
+        <div class="buttons">
+            <button type="submit">Submit Feedback</button>
+            <button type="button" id="deleteBtn">Delete Stored Data</button>
+        </div>
+
+    </form>
+
+    <h2 id="sessionUser"></h2>
+
+    <h2>Stored Feedback</h2>
+
+    <div id="display">
+        No feedback stored.
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
