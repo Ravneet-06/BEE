@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Exam Result</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding-top: 80px;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        #result {
+            font-size: 18px;
+            color: green;
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Online Exam Result</h1>
+
+    <button onclick="checkResult()">
+        Check Result
+    </button>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        function calculateResult() {
+
+            // Promise:
+            // A Promise gives us a result in the future.
+            // Here, it means:
+            // "I will give you the exam result after some time."
+
+            return new Promise(resolve => {
+
+                // setTimeout() creates a delay of 3 seconds.
+                // It simulates the time taken to calculate the result.
+
+                setTimeout(() => {
+
+                    // resolve() means the work is completed
+                    // and we are sending the final result.
+
+                    resolve("Your result is ready! You scored 85 marks.");
+
+                }, 3000);
+
+            });
+        }
+
+
+        async function checkResult() {
+
+            const para = document.getElementById("result");
+
+            // Show this message immediately.
+
+            para.innerText = "Calculating your result...";
+
+
+            // async:
+            // async allows us to use await inside this function.
+
+            // await:
+            // await waits for the Promise to finish
+            // and gives us its result.
+
+            const result = await calculateResult();
+
+
+            // After 3 seconds, the Promise is resolved.
+            // The result contains the message sent by resolve().
+
+            para.innerText = result;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
